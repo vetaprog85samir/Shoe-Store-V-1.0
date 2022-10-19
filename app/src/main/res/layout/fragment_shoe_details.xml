@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--using data binding as layout-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--using data binding to bind layout to ShoeModel class using 2 ways data binding-->
+    <data>
+
+        <import type="com.egyptfwd.shoestore.utils.DoubleConverter"/>
+        <variable
+            name="shoeModel"
+            type="com.egyptfwd.shoestore.models.ShoeModel" />
+        
+    </data>
+
+    <!--using scroll view to fit small screens-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_30sdp">
+
+        <!--Using constraint layout to easily locate save & cancel buttons so no need for nested views-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp">
+            <TextView
+                android:id="@+id/fragment_shoe_details_tv"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:textSize="@dimen/_16ssp"
+                android:fontFamily="@font/slackey"
+                android:text="@string/please_add_your_shoe_details"
+                android:textColor="#000"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/fragment_shoe_details_ti_style"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_shoe_details_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/fragment_shoe_details_shoe_name_ti"
+                android:hint="@string/enter_shoe_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={shoeModel.name}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/fragment_shoe_details_ti_style"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_shoe_details_shoe_name_ti"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/fragment_shoe_details_company_name_ti"
+                android:hint="@string/enter_company_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={shoeModel.company}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/fragment_shoe_details_ti_style"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_shoe_details_company_name_ti"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/fragment_shoe_details_shoe_size_ti"
+                android:hint="@string/enter_shoe_size">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={DoubleConverter.doubleToString(shoeModel.size)}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toBottomOf="@+id/fragment_shoe_details_shoe_size_ti"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/fragment_shoe_details_ti_style"
+                android:id="@+id/fragment_shoe_details_shoe_desc_ti"
+                android:hint="@string/enter_shoe_desc">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={shoeModel.description}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/fragment_shoe_details_save_btn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_shoe_details_shoe_desc_ti"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/fragment_shoe_details_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_50sdp"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_shoe_details_shoe_desc_ti"
+                app:layout_constraintStart_toEndOf="@+id/fragment_shoe_details_save_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/cancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

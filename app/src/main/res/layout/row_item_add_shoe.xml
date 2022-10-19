@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--using view binding as layout-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Using card view for better ui & ux-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/row_item_add_shoe_cv"
+        style="@style/row_item_add_shoe_cv">
+
+        <!--using scroll view to fit small screens-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--using linear layout as it is easier to implement in such simple layouts-->
+            <LinearLayout
+                android:id="@+id/row_item_add_shoe_ll"
+                style="@style/row_item_add_shoe_ll_style">
+
+                <TextView
+                    android:id="@+id/row_item_add_shoe_tv_shoe_name"
+                    style="@style/row_item_add_shoe_tv" />
+                <TextView
+                    android:id="@+id/row_item_add_shoe_tv_company_name"
+                    style="@style/row_item_add_shoe_tv" />
+                <TextView
+                    android:id="@+id/row_item_add_shoe_tv_shoe_size"
+                    style="@style/row_item_add_shoe_tv" />
+                <TextView
+                    android:id="@+id/row_item_add_shoe_tv_shoe_description"
+                    style="@style/row_item_add_shoe_tv" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

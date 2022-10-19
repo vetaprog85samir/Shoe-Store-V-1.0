@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Shoe Store</string>
+    <string name="login">Login img</string>
+    <string name="enter_username">Enter your username</string>
+    <string name="enter_email">Enter your email</string>
+    <string name="login_access">Login</string>
+    <string name="register_access">Register</string>
+    <string name="welcome_iv">Welcome</string>
+    <string name="welcome_tv1">Welcome To Your Shoe Store</string>
+    <string name="welcome_tv2">GET STARTED!!</string>
+    <string name="to_instructions">To Instructions</string>
+    <string name="instructions_iv">Instruction photo</string>
+    <string name="to_shoe_listing">START ADDING SHOES!!</string>
+    <string name="instructions_tv1">Kindly Read Instructions Well Before Starting</string>
+    <string name="instructions_tv2">Press add button to add a new shoe to shoe listing. To add a new shoe item you need to write down some details about it like name of shoe, name of company, size and description. You feel free to save these info or cancel saving.</string>
+    <string name="add_shoe_item">add shoe item</string>
+    <string name="please_add_your_shoe_details">Please Add your shoe details</string>
+    <string name="enter_shoe_name">Enter shoe name</string>
+    <string name="enter_company_name">Enter company name</string>
+    <string name="enter_shoe_size">Enter shoe size</string>
+    <string name="enter_shoe_desc">Enter shoe description</string>
+    <string name="save">save</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="size_format">Size: %s</string>
+    <string name="shoe_name_format">Shoe Name: %s</string>
+    <string name="company_name_format">Company Name: %s</string>
+    <string name="description_format">Description: %s</string>
+</resources>
